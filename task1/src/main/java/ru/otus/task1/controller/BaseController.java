@@ -18,10 +18,14 @@ public class BaseController {
         log.debug("ProductsApiDelegate.productsCreateNew: {}", product);
         return ResponseEntity.ok(product);
     }
+    @GetMapping("/get/{username}")
+    public ResponseEntity<String> checkProduct(@PathVariable String username) {
+        log.debug("ProductsApiDelegate.checkProducts: {}", username);
+        return ResponseEntity.ok(username);
+    }
 
     @GetMapping("/get/{username}")
     public ResponseEntity<String> checkProducts(@PathVariable String username) {
-        log.debug("ProductsApiDelegate.checkProducts: {}", username);
         return ResponseEntity.ok(username);
     }
 
